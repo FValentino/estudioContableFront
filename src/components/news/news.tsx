@@ -3,6 +3,8 @@ import { useForm, type SubmitHandler } from "react-hook-form"
 import {z} from "zod"
 import { InputForm } from "../common/form/inputForm";
 import { Mail } from "lucide-react";
+import { useSendEmailNews } from "../../hooks/useSendEmail";
+import toast from "react-hot-toast";
 
 const schema = z.object({
   email: z.string().min(1, "El correo es obligatorio").email("Correo inválido")
@@ -12,6 +14,8 @@ type FormValues = z.infer<typeof schema>
 
 export default function News(){
 
+  const {mutate, isPending} = useSendEmailNews();
+
   const {control, handleSubmit, formState:{errors}} = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues:{
@@ -19,9 +23,25 @@ export default function News(){
     }
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
-      console.log(data)
+  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+
+    const emaildata ={
+      subject: "novedades",
+      ...data
     }
+
+    console.log(emaildata)
+
+    mutate(emaildata, {
+      onSuccess: () => {
+        toast.success("Te has suscripto correctamente 🎉");
+      },
+      onError: () => {
+        toast.error("Ocurrió un error al suscribirse el mensaje ❌");
+      },
+    });
+
+  }
 
   return(
     <section className="w-[90%] my-6 p-6 mx-auto rounded-xl shadow-sm bg-[#171717] md:w-[50%]">
@@ -36,7 +56,10 @@ export default function News(){
             </p>
             <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col items-center space-y-4"> 
               <InputForm<FormValues> name="email" control={control} placeHolder="tu@email.com" Icon={Mail} error={errors.email} />
-              <button type="submit" className="w-[90%] mx-auto bg-[#1447e6]  mt-3 py-1 rounded-lg text-lg hover:cursor-pointer">
+              <button type="submit" className="w-[90%] mx-auto bg-[#1447e6] flex items-center justify-center  mt-3 py-1 rounded-lg text-lg hover:cursor-pointer">
+                {
+                  isPending && <div className="animate-spin w-6 h-6 rounded-full me-2 border-gray-800 border-2 border-s-3"></div>
+                }
                 Suscribirse
               </button>
             </form>

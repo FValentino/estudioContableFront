@@ -4,6 +4,7 @@ import Contact from "../components/contact/contact"
 import News from "../components/news/news"
 import { useEffect, useRef } from "react"
 import { useLocation } from "react-router-dom"
+import Menu from "../components/menu/menu"
 
 interface homeProps {
   section: string;
@@ -36,6 +37,7 @@ export default function Home( { section } : homeProps ){
       <div ref={menuTriggerRef}>
         
         <div ref={(el) => {sectionsRef.current['hero'] = el}} role="hero">
+          <Menu/>
           <Hero />
         </div>
 

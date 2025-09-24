@@ -41,12 +41,12 @@ export default function Services(){
       },
       {
         id: 3,
-        name: "Reclutamiento y seleccion de personal",
-        icon: Users
+        name: "Gobierno corporativo",
+        icon: Shield
       },
       {
         id: 4,
-        name: "Gobierno corporativo",
+        name: "Reclutamiento y seleccion de personal",
         icon: Users
       }
     ]

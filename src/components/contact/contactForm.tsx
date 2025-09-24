@@ -1,9 +1,11 @@
+import toast, { Toaster } from "react-hot-toast";
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm, type SubmitHandler } from "react-hook-form"
 import {z} from "zod"
+import { useForm, type SubmitHandler } from "react-hook-form"
 import { InputForm } from "../common/form/inputForm";
 import { TextAreaForm } from "../common/form/textAreaForm";
 import { Mail, Phone } from "lucide-react";
+import { useSendEmail } from "../../hooks/useSendEmail";
 
 
 const schema = z.object({
@@ -17,6 +19,8 @@ type FormValues = z.infer<typeof schema>
 
 export default function ClientRegisterForm(){
 
+  const {mutate, isPending} = useSendEmail();
+
 
   const {control, handleSubmit, formState:{errors}} = useForm<FormValues>({
     resolver: zodResolver(schema),
@@ -28,8 +32,22 @@ export default function ClientRegisterForm(){
     }
   });
 
-  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
-    console.log(data)
+  const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
+
+    const emaildata ={
+      subject: "contacto",
+      ...data
+    }
+
+    mutate(emaildata, {
+      onSuccess: () => {
+        toast.success("Email enviado correctamente 🎉");
+      },
+      onError: () => {
+        toast.error("Ocurrió un error al enviar el mensaje ❌");
+      },
+    });
+
   }
 
   return(
@@ -47,10 +65,15 @@ export default function ClientRegisterForm(){
         <TextAreaForm<FormValues> name="message" control={control} 
         placeHolder="Cuentanos sobre tu proyecto o consulta" error={errors.message} />
 
-        <button type="submit" className="w-[90%] mx-auto bg-[#1447e6]  mt-3 py-1 rounded-lg text-lg hover:cursor-pointer">
+        <button type="submit" className="w-[90%] mx-auto bg-[#1447e6] flex items-center justify-center mt-3 py-1 rounded-lg text-lg hover:cursor-pointer">
+          {
+            isPending && <div className="animate-spin w-6 h-6 rounded-full me-2 border-gray-800 border-2 border-s-3"></div>
+          }
           Enviar Consulta
         </button>
       </form>
+
+      <Toaster position="bottom-right" /> 
     </div>
   );
 }
