@@ -10,7 +10,7 @@ export default function Contact(){
       <ContactForm/>
       <p className="w-full mt-4 text-lg text-center">
         Contacto:{" "}
-        <a href="mailto:contacto@imgestion.com?subject=Consulta%20desde%20la%20web" 
+        <a href={`mailto:${import.meta.env.VITE_EMAIL}?subject=Consulta%20desde%20la%20web`} 
         className="text-[#1447e6] hover:underline">
           {email}
         </a>
