@@ -5,7 +5,7 @@ import banner from "../../assets/images/banner.jpg";
 
 export default function Hero() {
   return (
-    <section className="w-full h-[calc(100vh-6rem)]  relative overflow-hidden lg:h-[calc(100vh-5rem)]">
+    <section className="w-full h-auto  relative lg:overflow-hidden lg:h-[calc(100vh-5rem)]">
       {/* Fondo de escritorio */}
       <img
         src={banner}
@@ -25,7 +25,7 @@ export default function Hero() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="w-full pt-16 relative text-center flex flex-col justify-center z-10
+        className="w-full py-16 relative text-center flex flex-col justify-center z-10
         lg:w-[50%] lg:h-full lg:ms-4 lg:pt-0"
       >
         <h1 className="text-3xl md:text-5xl  font-bold mb-6 text-balance">
