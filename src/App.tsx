@@ -7,8 +7,24 @@ import TermsAndConditions from "./pages/termsAndConditions"
 import ScrollToTop from "./components/common/globalBehavior/scrollToTop"
 import { QueryClientProvider } from "@tanstack/react-query"
 import { queryClient } from "./client/reactQuery"
+import { useEffect } from "react"
+import axios from "axios"
 
 function App() {
+
+  useEffect(() => {
+    const activarServidor = async () => {
+      try {
+        const response = await axios.get('https://estudiocontableback.onrender.com/');
+        console.log('Servidor activado:', response.status);
+      } catch (error) {
+        console.error('Error al activar servidor:', error);
+      }
+    };
+
+    activarServidor();
+  }, []);
+
 
   return (
     <QueryClientProvider client={queryClient}>
