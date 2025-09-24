@@ -43,6 +43,11 @@ export default function Services(){
         id: 3,
         name: "Reclutamiento y seleccion de personal",
         icon: Users
+      },
+      {
+        id: 4,
+        name: "Gobierno corporativo",
+        icon: Users
       }
     ]
   },
