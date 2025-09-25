@@ -7,12 +7,19 @@ interface ServiceResponse{
 
 export const sendEmail = async (subject: string, name:string, email:string, phone:string, message:string):Promise<ServiceResponse>=>{
   try{
+
+    const htmlContent = `
+      <h2>Me comunico desde la web:</h2>
+      <p><strong>Nombre:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Teléfono:</strong> ${phone}</p>
+      <p><strong>Mensaje:</strong><br/>${message}</p>
+    `;
+
+    
     const data = {
       subject: subject,
-      name: name,
-      email: email,
-      phone: phone,
-      message:message
+      html: htmlContent
     }
 
     const response = await axios.post("https://estudiocontableback.onrender.com/contact", data, {
