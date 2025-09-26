@@ -82,7 +82,7 @@ export default function Services(){
         adaptados a las particularidades de cada proyecto.
       </p>
       
-      <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+      <div className="w-[90%] grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto ">
         {
           servicesData.map((service)=> <Service key={service.id} id={service.id} title={service.title} services={service.services}/>)
         }

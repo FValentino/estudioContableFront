@@ -11,7 +11,7 @@ import { useSendEmail } from "../../hooks/useSendEmail";
 const schema = z.object({
   name: z.string().min(1, "El nombre es obligatorio"),
   email: z.string().min(1, "El correo es obligatorio").email("Correo inválido"),
-  phone: z.string().min(1, "El telefono es obligatorio").regex(/^\d+$/, "Telefono no puede contener caracteres").min(8, "El telefono es muy corto").max(10, "El telefono es muy largo"),
+  phone: z.string().min(1, "El telefono es obligatorio").regex(/^\d+$/, "Telefono solo debe contener numeros").min(8, "El telefono es muy corto").max(10, "El telefono es muy largo"),
   message: z.string().min(1, "El mensaje es obligatorio").min(10, "El mensaje debe tener al menos 10 caracteres")
 });
 
@@ -54,12 +54,13 @@ export default function ClientRegisterForm(){
     <div className="w-full ">
       <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col items-center space-y-4"> 
         <InputForm<FormValues> name="name" control={control} placeHolder="Nombre completo" Icon={Mail} error={errors.name} />
-        <div className="w-[90%] flex justify-around">
+        <div className="w-[90%] flex flex-col justify-around lg:flex-row">
           <div className="w-[50%] ">
             <InputForm<FormValues> name="email" control={control} placeHolder="Email" Icon={Mail} error={errors.email}/>
           </div>
-          <div className="w-[50%] flex justify-end">
+          <div className="w-[50%] flex flex-col justify-end">
             <InputForm<FormValues> name="phone" control={control} placeHolder="Telefono" Icon={Phone} error={errors.phone} />
+            <p className="text-sm font-bold">*Ingrese el telefono sin 0 ni 15</p>
           </div>
         </div>
         <TextAreaForm<FormValues> name="message" control={control} 

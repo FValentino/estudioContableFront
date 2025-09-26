@@ -3,8 +3,12 @@
 import { motion } from "framer-motion";
 import banner from "../../assets/images/banner.jpg";
 import bannerMobile from "../../assets/images/banner-mobile.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function Hero() {
+
+  const navigate = useNavigate();
+
   return (
     <section className="w-full h-auto relative overflow-hidden lg:h-[calc(100vh-5rem)]">
       {/* Fondo de escritorio */}
@@ -49,7 +53,8 @@ export default function Hero() {
           consolidación y expansión.
         </p>
 
-        <button className="bg-[#1447e6] w-[50%] mx-auto mt-12 py-2 rounded-xl text-xl font-semibold 
+        <button onClick={()=>{navigate("/contacto")}}
+          className="bg-[#1447e6] w-[50%] mx-auto mt-12 py-2 rounded-xl text-xl font-semibold 
           hover:cursor-pointer lg:mt-4">
           Agendá tu reunión
         </button>

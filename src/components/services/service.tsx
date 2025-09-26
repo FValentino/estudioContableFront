@@ -16,7 +16,7 @@ interface serviceProps{
 
 export default function Service({title, services}: serviceProps){
   return (
-    <div className="bg-[#1447e6]/10 my-4 border-2 border-[#1447e6]/20 rounded-lg p-4">
+    <div className="bg-[#1447e6]/10 mx-auto my-4 h-80 w-70 border-2 border-[#1447e6]/20 rounded-lg p-4">
       <div className="w-full mb-4">
         <h3 className="text-lg text-[#1447e6] text-center font-semibold">{title}</h3>
       </div>
