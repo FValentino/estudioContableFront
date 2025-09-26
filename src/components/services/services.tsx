@@ -4,71 +4,70 @@ import Service from "./service";
 export default function Services(){
 
   const servicesData = [
-  {
-    id: 1,
-    title: "Servicios Contables y Financieros",
-    services: [
-      {
-        id: 1,
-        name: "Contabilidad",
-        icon: FileText
-      },
-      {
-        id: 2,
-        name: "Auditoria",
-        icon: FileText
-      },
-      {
-        id: 3,
-        name: "Impuestos",
-        icon: Calculator
-      }
-    ]
-  },
-  {
-    id: 2,
-    title: "Gestión Empresarial",
-    services: [
-      {
-        id: 1,
-        name: "Administracion",
-        icon: TrendingUp
-      },
-      {
-        id: 2,
-        name: "Sueldos",
-        icon: Users
-      },
-      {
-        id: 3,
-        name: "Gobierno corporativo",
-        icon: Shield
-      },
-      {
-        id: 4,
-        name: "Reclutamiento y seleccion de personal",
-        icon: Users
-      }
-    ]
-  },
-  {
-    id: 3,
-    title: "Servicios Especializados",
-    services: [
-      {
-        id: 1,
-        name: "Compliance: prevención de lavado de activos y financiación del terrorismo",
-        icon: Shield
-      },
-      {
-        id: 2,
-        name: "Consultoria de negocios",
-        icon: TrendingUp
-      }
-    ]
-  },
-
-]
+    {
+      id: 1,
+      title: "Servicios Contables y Financieros",
+      services: [
+        {
+          id: 1,
+          name: "Contabilidad",
+          icon: FileText
+        },
+        {
+          id: 2,
+          name: "Auditoría",
+          icon: FileText
+        },
+        {
+          id: 3,
+          name: "Impuestos",
+          icon: Calculator
+        }
+      ]
+    },
+    {
+      id: 2,
+      title: "Gestión Empresarial",
+      services: [
+        {
+          id: 1,
+          name: "Administración",
+          icon: TrendingUp
+        },
+        {
+          id: 2,
+          name: "Sueldos",
+          icon: Users
+        },
+        {
+          id: 3,
+          name: "Gobierno Corporativo",
+          icon: Shield
+        },
+        {
+          id: 4,
+          name: "Reclutamiento y Selección de Personal",
+          icon: Users
+        }
+      ]
+    },
+    {
+      id: 3,
+      title: "Servicios Especializados",
+      services: [
+        {
+          id: 1,
+          name: "Compliance: Prevención de Lavado de Activos y Financiación del Terrorismo",
+          icon: Shield
+        },
+        {
+          id: 2,
+          name: "Consultoría de Negocios",
+          icon: TrendingUp
+        }
+      ]
+    }
+  ]
 
 
   return(
