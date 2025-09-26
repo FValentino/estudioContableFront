@@ -2,23 +2,30 @@
 
 import { motion } from "framer-motion";
 import banner from "../../assets/images/banner.jpg";
+import bannerMobile from "../../assets/images/banner-mobile.jpg";
 
 export default function Hero() {
   return (
-    <section className="w-full h-auto  relative lg:overflow-hidden lg:h-[calc(100vh-5rem)]">
+    <section className="w-full h-auto relative overflow-hidden lg:h-[calc(100vh-5rem)]">
       {/* Fondo de escritorio */}
-      <img
-        src={banner}
-        alt="Banner I&M Gestión de Negocio"
-        className="hidden absolute object-contain lg:block"
-      />
+      <div className="w-full">
+        <picture>
+          <source srcSet={bannerMobile}  media="(max-width: 1024px)" />
 
-      {/* Gradiente circular en móvil */}
-      <div className="absolute inset-0 bg-black lg:hidden"
-           style={{
-             background: "radial-gradient(circle, #0a0a0a 0%, #504c4c 100%)",
-           }}
-      />
+          <img
+            src={banner}
+            alt="Banner I&M Gestión de Negocio"
+            className="absolute w-full h-full [object-fit:fill]  lg:w-auto lg:h-auto lg:object-contain "
+          />
+        </picture>
+      </div>
+      {/* Gradiente circular en móvil 
+        <div className="absolute inset-0 bg-black lg:hidden"
+          style={{
+            background: "radial-gradient(circle, #0a0a0a 0%, #504c4c 100%)",
+          }}
+        />
+      */}
 
       {/* Texto animado */}
       <motion.div
