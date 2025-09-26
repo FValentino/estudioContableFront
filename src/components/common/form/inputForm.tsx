@@ -12,7 +12,7 @@ interface Props<T extends FieldValues = FieldValues>{
 export function InputForm <T extends FieldValues = FieldValues>({name, control, placeHolder, Icon, type, error}: Props<T>){
 
   return(
-    <div className="w-[90%] flex flex-col mt-2 ">
+    <div className="w-[90%] mx-auto flex flex-col mt-2 lg:mx-0">
       <div className="w-full relative">
         <Icon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white" />
         <Controller
