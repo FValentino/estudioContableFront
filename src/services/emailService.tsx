@@ -41,9 +41,16 @@ export const sendEmail = async (subject: string, name:string, email:string, phon
 
 export const sendEmailNews = async (subject: string, email:string):Promise<ServiceResponse>=>{
   try{
+
+    const htmlContent = `
+      <h2>Me comunico desde la web:</h2>
+      <p> Me interesa recibir novedades, mi email es: ${email}</p>
+    `;
+
+    
     const data = {
       subject: subject,
-      email: email
+      text: htmlContent
     }
 
     const response = await axios.post("https://estudiocontableback.onrender.com/contact/news", data, {
