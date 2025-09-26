@@ -54,13 +54,13 @@ export default function ClientRegisterForm(){
     <div className="w-full ">
       <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col items-center space-y-4"> 
         <InputForm<FormValues> name="name" control={control} placeHolder="Nombre completo" Icon={Mail} error={errors.name} />
-        <div className="w-[90%] flex flex-col justify-around lg:flex-row">
-          <div className="w-[50%] ">
+        <div className="w-full flex flex-col justify-around lg:flex-row lg:w-[90%]">
+          <div className="w-full lg:w-[50%]">
             <InputForm<FormValues> name="email" control={control} placeHolder="Email" Icon={Mail} error={errors.email}/>
           </div>
-          <div className="w-[50%] flex flex-col justify-end">
+          <div className="w-full flex flex-col justify-end items-end lg:w-[50%]">
             <InputForm<FormValues> name="phone" control={control} placeHolder="Telefono" Icon={Phone} error={errors.phone} />
-            <p className="text-sm font-bold">*Ingrese el telefono sin 0 ni 15</p>
+            <p className="w-[90%] text-sm font-bold">*Ingrese el telefono sin 0 ni 15</p>
           </div>
         </div>
         <TextAreaForm<FormValues> name="message" control={control} 
