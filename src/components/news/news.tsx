@@ -37,7 +37,7 @@ export default function News(){
         toast.success("Te has suscripto correctamente 🎉");
       },
       onError: () => {
-        toast.error("Ocurrió un error al suscribirse el mensaje ❌");
+        toast.error("Ocurrió un error al suscribirse ❌");
       },
     });
 
@@ -82,26 +82,3 @@ export default function News(){
     </section>
   );
 }
-
-
-/*
-
-<form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto"> 
-  <div className="flex flex-col sm:flex-row gap-3">
-    <div className="flex-1 relative">
-      <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-[#777165]" />
-      <InputForm<FormValues> name="email" control={control} placeHolder="tu@email.com" Icon={Mail} error={errors.email} />
-    </div>
-    <button type="submit" className="w-full flex items-center justify-center h-10 rounded-md px-6 has-[>svg]:px-4
-        bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] hover:cursor-pointer">
-        bg-[linear-gradient(135deg,#f1f5f9_0%,#e2e8f0_100%)]
-        bg-[linear-gradient(135deg,#f1f5f9_0%,#e2e8f0_100%)];
-      {
-        isPending && <div className="animate-spin w-6 h-6 rounded-full me-2 border-gray-800 border-2 border-s-3"></div>
-      }
-      Suscribirse
-    </button>
-  </div>
-</form>
-
-*/

@@ -1,6 +1,7 @@
 @import "./fonts.css";
 @import "tailwindcss";
 
+/* Inputs */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -10,9 +11,9 @@ textarea:-webkit-autofill:focus,s
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-box-shadow: 0 0 0px 1000px #0a0a0a inset ; /* color de fondo */
-  -webkit-text-fill-color: #0f0a03 ; /* color del texto */
-  transition: background-color 5000s ease-in-out 0s; /* evita el flash */
+  -webkit-box-shadow: 0 0 0px 1000px #faf8f5 inset ; 
+  -webkit-text-fill-color: #0f0a03 ;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 
