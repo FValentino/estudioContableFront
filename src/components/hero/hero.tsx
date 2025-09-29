@@ -86,7 +86,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button onClick={()=>{navigate("/contacto")}}
                 className="bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] 
-                group rounded-md px-5 py-3 font-medium flex items-center hover:cursor-pointer">
+                group rounded-md px-5 py-3 font-medium flex items-center justify-center hover:cursor-pointer">
                 Agendar tu Reunión
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
