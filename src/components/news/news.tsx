@@ -3,7 +3,7 @@ import { useForm, type SubmitHandler } from "react-hook-form"
 import {z} from "zod"
 import { InputForm } from "../common/form/inputForm";
 import { Bell, Mail } from "lucide-react";
-import { useSendEmailNews } from "../../hooks/useSendEmail";
+import { useSendEmail } from "../../hooks/useSendEmail";
 import toast from "react-hot-toast";
 
 const schema = z.object({
@@ -14,9 +14,9 @@ type FormValues = z.infer<typeof schema>
 
 export default function News(){
 
-  const {mutate, isPending} = useSendEmailNews();
+  const {mutate, isPending} = useSendEmail();
 
-  const {control, handleSubmit, formState:{errors}} = useForm<FormValues>({
+  const {control, handleSubmit, reset, formState:{errors}} = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues:{
       email: ""
@@ -27,14 +27,16 @@ export default function News(){
 
     const emaildata ={
       subject: "novedades",
-      ...data
+      message:  `
+        <h2>Me comunico desde la web:</h2>
+        <p> Me interesa recibir novedades, mi email es: ${data.email}</p>
+      `
     }
-
-    console.log(emaildata)
 
     mutate(emaildata, {
       onSuccess: () => {
         toast.success("Te has suscripto correctamente 🎉");
+        reset();
       },
       onError: () => {
         toast.error("Ocurrió un error al suscribirse ❌");

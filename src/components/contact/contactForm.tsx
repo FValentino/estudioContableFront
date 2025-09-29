@@ -22,7 +22,7 @@ export default function ContactForm(){
   const {mutate, isPending} = useSendEmail();
 
 
-  const {control, handleSubmit, formState:{errors}} = useForm<FormValues>({
+  const {control, handleSubmit, reset, formState:{errors}} = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues:{
       name: "",
@@ -33,15 +33,22 @@ export default function ContactForm(){
   });
 
   const onSubmit: SubmitHandler<FormValues> = async (data: FormValues) => {
-
+    
     const emaildata ={
       subject: "contacto",
-      ...data
+      message: `
+        <h2>Me comunico desde la web:</h2>
+        <p><strong>Nombre:</strong> ${data.name}</p>
+        <p><strong>Email:</strong> ${data.email}</p>
+        <p><strong>Teléfono:</strong> ${data.phone}</p>
+        <p><strong>Mensaje:</strong><br/>${data.message}</p>
+      `
     }
 
     mutate(emaildata, {
       onSuccess: () => {
         toast.success("Email enviado correctamente 🎉");
+        reset();
       },
       onError: () => {
         toast.error("Ocurrió un error al enviar el mensaje ❌");
