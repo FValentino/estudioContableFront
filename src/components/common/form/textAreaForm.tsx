@@ -29,7 +29,7 @@ export function TextAreaForm<T extends FieldValues = FieldValues>({
             id={name}
             rows={rows}
             {...field}
-            className={`border rounded-lg px-2 py-1 pl-10 resize-none w-full ${error ? "border-red-500" : "border-gray-300"}`}
+            className={`border rounded-lg px-2 py-1 pl-10 resize-none w-full  text-[#0f0a03] ${error ? "border-red-500" : "border-gray-300"}`}
           />
         )}
       />
