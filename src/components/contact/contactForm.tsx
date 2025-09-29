@@ -60,7 +60,7 @@ export default function ContactForm(){
           </div>
           <div>
             <InputForm<FormValues> name="phone" control={control} placeHolder="Teléfono" Icon={Phone} error={errors.phone} />
-            <p className="w-[90%] mx-auto text-xs font-bold lg:text-center">*Ingrese el teléfono sin 0 ni 15</p>
+            <p className="w-[90%] mx-auto text-xs text-[#0f0a03] font-bold lg:text-center">*Ingrese el teléfono sin 0 ni 15</p>
           </div>
         </div>
         <TextAreaForm<FormValues> name="message" control={control} 
