@@ -4,7 +4,7 @@ import {z} from "zod"
 import { useForm, type SubmitHandler } from "react-hook-form"
 import { InputForm } from "../common/form/inputForm";
 import { TextAreaForm } from "../common/form/textAreaForm";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import { useSendEmail } from "../../hooks/useSendEmail";
 
 
@@ -17,7 +17,7 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>
 
-export default function ClientRegisterForm(){
+export default function ContactForm(){
 
   const {mutate, isPending} = useSendEmail();
 
@@ -51,14 +51,14 @@ export default function ClientRegisterForm(){
   }
 
   return(
-    <div className="w-full ">
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col items-center space-y-4"> 
+    <>
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-4"> 
         <InputForm<FormValues> name="name" control={control} placeHolder="Nombre completo" Icon={Mail} error={errors.name} />
-        <div className="w-full flex flex-col space-y-3 justify-around items-center lg:flex-row lg:w-[90%]">
-          <div className="w-full lg:w-[50%]">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
             <InputForm<FormValues> name="email" control={control} placeHolder="Email" Icon={Mail} error={errors.email}/>
           </div>
-          <div className="w-full flex flex-col justify-end lg:items-end lg:w-[50%]">
+          <div>
             <InputForm<FormValues> name="phone" control={control} placeHolder="Teléfono" Icon={Phone} error={errors.phone} />
             <p className="w-[90%] mx-auto text-xs font-bold lg:text-center">*Ingrese el teléfono sin 0 ni 15</p>
           </div>
@@ -66,15 +66,17 @@ export default function ClientRegisterForm(){
         <TextAreaForm<FormValues> name="message" control={control} 
         placeHolder="Cuentanos sobre tu proyecto o consulta" error={errors.message} />
 
-        <button type="submit" className="w-[90%] mx-auto bg-[#1447e6] flex items-center justify-center mt-3 py-1 rounded-lg text-lg hover:cursor-pointer">
+        <button type="submit" className="w-full flex items-center justify-center h-10 rounded-md px-6 has-[>svg]:px-4
+                  bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] hover:cursor-pointer">
           {
             isPending && <div className="animate-spin w-6 h-6 rounded-full me-2 border-gray-800 border-2 border-s-3"></div>
           }
           Enviar Consulta
+          <Send className={isPending? "hidden" : "w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"} />
         </button>
       </form>
 
       <Toaster position="bottom-right" /> 
-    </div>
+    </>
   );
 }

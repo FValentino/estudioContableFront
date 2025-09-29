@@ -1,10 +1,11 @@
 import Hero from "../components/hero/hero"
 import Services from "../components/services/services"
-import Contact from "../components/contact/contact"
 import News from "../components/news/news"
 import { useEffect, useRef } from "react"
 import { useLocation } from "react-router-dom"
 import Menu from "../components/menu/menu"
+import { About } from "../components/about/about"
+import Contact from "../components/contact/contact"
 
 interface homeProps {
   section: string;
@@ -39,6 +40,10 @@ export default function Home( { section } : homeProps ){
         <div ref={(el) => {sectionsRef.current['hero'] = el}} role="hero">
           <Menu/>
           <Hero />
+        </div>
+
+        <div ref={(el) => {sectionsRef.current['about'] = el}} role="nosotros">
+          <About/>
         </div>
 
         <div ref={(el) => {sectionsRef.current['services'] = el}} role="services">

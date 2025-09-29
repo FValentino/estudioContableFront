@@ -12,21 +12,21 @@ interface Props<T extends FieldValues = FieldValues>{
 export function InputForm <T extends FieldValues = FieldValues>({name, control, placeHolder, Icon, type, error}: Props<T>){
 
   return(
-    <div className="w-[90%] mx-auto flex flex-col mt-2 lg:mx-0">
+    <>
       <div className="w-full relative">
-        <Icon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-white" />
+        <Icon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-[#0f0a03]" />
         <Controller
           name={name}
           control={control}
           render={({ field })=>
             <input id={name} type={type} {...field} placeholder={placeHolder}
-              className={`border rounded-lg px-2 py-2 pl-10 w-full 
+              className={`border rounded-lg placeholder-[#777165] px-2 py-2 pl-10 w-full text-[#0f0a03]
                 ${error ? "border-red-500" : "border-gray-300"}
-                ${field.value ? "border-white border-3" : "border-gray-300"}`} 
+                ${field.value ? "border-[#0f0a03] border-3" : "border-gray-300"}`} 
             />}
         />
       </div>
       {error && <p className="text-sm text-[red]">{error.message}</p>}
-    </div>
+    </>
   );
 }

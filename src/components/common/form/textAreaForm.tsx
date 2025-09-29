@@ -18,8 +18,8 @@ export function TextAreaForm<T extends FieldValues = FieldValues>({
 }: Props<T>) {
 
   return (
-    <div className="w-[90%] flex flex-col mt-2 relative">
-      <MessageSquare className="absolute left-3 top-5 -translate-y-1/2 h-5 w-5 text-white" />
+    <div className="flex flex-col mt-2 relative">
+      <MessageSquare className="absolute left-3 top-5 -translate-y-1/2 h-5 w-5 text-[#0f0a03]" />
       <Controller
         name={name}
         control={control}
