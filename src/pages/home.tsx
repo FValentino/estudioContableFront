@@ -3,7 +3,7 @@ import Services from "../components/services/services"
 import News from "../components/news/news"
 import { useEffect, useRef } from "react"
 import { useLocation } from "react-router-dom"
-import Menu from "../components/menu/menu"
+//import Menu from "../components/menu/menu"
 import { About } from "../components/about/about"
 import Contact from "../components/contact/contact"
 
@@ -35,10 +35,8 @@ export default function Home( { section } : homeProps ){
   
   return(
     <>
-      <div ref={menuTriggerRef}>
-        
+      <main ref={menuTriggerRef}>
         <div ref={(el) => {sectionsRef.current['hero'] = el}} role="hero">
-          <Menu/>
           <Hero />
         </div>
 
@@ -57,7 +55,7 @@ export default function Home( { section } : homeProps ){
         <div ref={(el) => {sectionsRef.current['news'] = el}} role="suscribirse">
           <News />
         </div>
-      </div>
+      </main>
     </>
   )
 }

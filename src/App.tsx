@@ -8,6 +8,7 @@ import { QueryClientProvider } from "@tanstack/react-query"
 import { queryClient } from "./client/reactQuery"
 import { useEffect } from "react"
 import axios from "axios"
+import Menu from "./components/menu/menu"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router>
         <ScrollToTop/>
+        <Menu/>
         <Routes>
           <Route path="/" element={ <Home section={"hero"} />}/>
           <Route path="/nosotros" element={<Home section={"about"} />}/>

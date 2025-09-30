@@ -62,7 +62,7 @@ export default function Menu(){
           <div className="md:hidden py-4 border-t border-[#e1ded7]">
             <nav className="flex flex-col space-y-4">
               <Link
-                to="inicio" onClick={closeMenu}
+                to="/" onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Inicio
