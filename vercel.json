@@ -7,13 +7,10 @@
       "config": { "distDir": "dist"}
     }
   ],
-  "routes": [
-    { "src": "/", "dest": "/index.html" },
-    { "src": "/servicios", "dest": "/index.html" },
-    { "src": "/contacto", "dest": "/index.html" },
-    { "src": "/suscribirse", "dest": "/index.html" },
-    { "src": "/politica-de-privacidad", "dest": "/index.html" },
-    { "src": "/terminos-y-condiciones", "dest": "/index.html" }
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/index.html"
+    }
   ]
 }
-
