@@ -15,6 +15,8 @@ export default function Menu(){
     setIsMenuOpen(false)
   }
 
+  
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf8f5]/80 backdrop-blur-md border-b border-[#e1ded7]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,19 +35,19 @@ export default function Menu(){
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Inicio
             </Link>
-            <Link to="/servicios" onClick={closeMenu} 
+            <Link to="#servicios" onClick={closeMenu} 
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Servicios
             </Link>
-            <Link to="/nosotros" onClick={closeMenu} 
+            <Link to="#nosotros" onClick={closeMenu} 
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Nosotros
             </Link>
-            <Link to="/contacto" onClick={closeMenu} 
+            <Link to="#contacto" onClick={closeMenu} 
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Contacto
             </Link>
-            <button onClick={() => navigate("/contacto")}
+            <button onClick={() => navigate("#contacto")}
               className="bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] h-8 
               rounded-lg gap-1.5 px-5.5 hover:cursor-pointer">
               Agendar Consulta
@@ -68,25 +70,25 @@ export default function Menu(){
                 Inicio
               </Link>
               <Link
-                to="/servicios" onClick={closeMenu}
+                to="#servicios" onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Servicios
               </Link>
               <Link
-                to="/nosotros" onClick={closeMenu}
+                to="#nosotros" onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Nosotros
               </Link>
               <Link
-                to="/contacto" onClick={closeMenu}
+                to="#contacto" onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Contacto
               </Link>
               <button onClick={()=>{
-                  navigate("/contacto");
+                  navigate("#contacto");
                   closeMenu()
                 }}
                 className="bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] w-fit 
