@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
       <p>Implementamos medidas de seguridad para proteger los datos de los usuarios.</p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">Contacto</h2>
-      <p>Si tenés preguntas sobre esta política, podés contactarnos en: <a className="text-blue-600 underline" href={`mailto:${import.meta.env.VITE_EMAIL}`}>{import.meta.env.VITE_EMAIL}</a></p>
+      <p>Si tenés preguntas sobre esta política, podés contactarnos en: <a className="text-blue-600 underline" href={`mailto:${process.env.VITE_MAIL}`}>{process.env.VITE_MAIL}</a></p>
     </div>
   );
 }

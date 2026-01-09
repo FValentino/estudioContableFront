@@ -1,0 +1,36 @@
+{
+  "node": {
+    "407d0d35fe59823968ba6eb3edae908524c9d9a409": {
+      "workers": {
+        "app/page": {
+          "moduleId": 50104,
+          "async": false,
+          "exportedName": "newsEmailAction",
+          "filename": "src/actions/newsEmail.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "filename": "src/actions/newsEmail.ts",
+      "exportedName": "newsEmailAction"
+    },
+    "40ec44452b7860282842593a3fc793d6c716482ee3": {
+      "workers": {
+        "app/page": {
+          "moduleId": 50104,
+          "async": false,
+          "exportedName": "contactEmailAction",
+          "filename": "src/actions/contactEmail.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "filename": "src/actions/contactEmail.ts",
+      "exportedName": "contactEmailAction"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "V3m/RzSatK4B1CK69ObeP2bAdimHejNhBQ1q/WA09PI="
+}
