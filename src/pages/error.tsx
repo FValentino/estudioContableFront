@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom"
+
 import { FileQuestion, Home } from "lucide-react"
+import Link from "next/link"
 
 export default function NotFound() {
   return (
@@ -7,7 +8,7 @@ export default function NotFound() {
       {/* Header */}
       <header className="border-b border-[#0A2540]/10 bg-white/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4">
-          <Link to="/" className="flex items-center gap-2 w-fit">
+          <Link href="/" className="flex items-center gap-2 w-fit">
             <div className="w-8 h-8 bg-[#0A2540] rounded-lg flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <rect x="3" y="3" width="18" height="18" rx="2" strokeWidth="2" />
@@ -45,7 +46,7 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
             className="bg-[#0A2540] hover:bg-[#0A2540]/90 text-white px-8 h-10 rounded-md has-[>svg]:px-4">
-              <Link to="/" className="flex items-center gap-2">
+              <Link href="/" className="flex items-center gap-2">
                 <Home className="w-5 h-5" />
                 Volver al Inicio
               </Link>
