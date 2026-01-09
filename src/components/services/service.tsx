@@ -24,7 +24,7 @@ export default function Service({category}: ServiceProps){
       className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 group
                 bg-[#ffffff] text-[#0f0a03] flex flex-col gap-6 rounded-xl py-6">
       <div data-slot="card-header"
-        className={`bg-gradient-to-br ${category.gradient} rounded-t-lg py-4
+        className={`bg-linear-to-br ${category.gradient} rounded-t-lg py-4
           @container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start 
           gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6
         `}>
@@ -40,7 +40,7 @@ export default function Service({category}: ServiceProps){
               key={serviceIndex}
               className="flex items-start space-x-3 p-3 rounded-lg hover:bg-[#ebe4d6]/50 transition-colors"
             >
-              <div className="flex-shrink-0 w-10 h-10 bg-[#002443]/10 rounded-lg flex items-center justify-center">
+              <div className="shrink-0 w-10 h-10 bg-[#002443]/10 rounded-lg flex items-center justify-center">
                 <service.icon className="w-5 h-5 text-[#002443]" />
               </div>
               <div className="flex-1">

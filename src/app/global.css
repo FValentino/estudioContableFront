@@ -1,0 +1,28 @@
+@import "../styles/fonts.css";
+@import "tailwindcss";
+
+/* Inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,s
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #faf8f5 inset ; 
+  -webkit-text-fill-color: #0f0a03 ;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Geist', sans-serif;
+  background-color:#faf8f5;
+  min-height: screen;
+  color: rgba(255, 255, 255, 0.76)
+}

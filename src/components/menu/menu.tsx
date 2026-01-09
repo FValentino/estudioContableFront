@@ -1,11 +1,14 @@
+"use client"
+
 import { Calculator, MenuIcon, X } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 export default function Menu(){
 
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
-  const navigate = useNavigate()
+  const navigate = useRouter();
 
   const setMenu = ()=>{
     setIsMenuOpen(!isMenuOpen)
@@ -31,25 +34,25 @@ export default function Menu(){
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" onClick={closeMenu} 
+            <Link href={"/"} onClick={closeMenu}
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Inicio
             </Link>
-            <Link to="#servicios" onClick={closeMenu} 
+            <Link href={"#servicios"} onClick={closeMenu} 
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Servicios
             </Link>
-            <Link to="#nosotros" onClick={closeMenu} 
+            <Link href={"#nosotros"} onClick={closeMenu} 
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Nosotros
             </Link>
-            <Link to="#contacto" onClick={closeMenu} 
+            <Link href={"#contacto"} onClick={closeMenu} 
               className="text-[#777165] hover:text-[#0f0a03] transition-colors">
               Contacto
             </Link>
-            <button onClick={() => navigate("#contacto")}
-              className="bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] h-8 
-              rounded-lg gap-1.5 px-5.5 hover:cursor-pointer">
+            <button onClick={() => navigate.push("#contacto")}
+              className={`bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] h-8 
+              rounded-lg gap-1.5 px-5.5 hover:cursor-pointer`}>
               Agendar Consulta
             </button>
           </nav>
@@ -64,35 +67,35 @@ export default function Menu(){
           <div className="md:hidden py-4 border-t border-[#e1ded7]">
             <nav className="flex flex-col space-y-4">
               <Link
-                to="/" onClick={closeMenu}
+                href={"/"} onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Inicio
               </Link>
               <Link
-                to="#servicios" onClick={closeMenu}
+                href={"#servicios"} onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Servicios
               </Link>
               <Link
-                to="#nosotros" onClick={closeMenu}
+                href={"#nosotros"} onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Nosotros
               </Link>
               <Link
-                to="#contacto" onClick={closeMenu}
+                href={"#contacto"} onClick={closeMenu}
                 className="text-[#777165] hover:text-[#0f0a03] transition-colors"
               >
                 Contacto
               </Link>
               <button onClick={()=>{
-                  navigate("#contacto");
+                  navigate.push("#contacto");
                   closeMenu()
                 }}
-                className="bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] w-fit 
-                rounded-md px-3 py-2 hover:cursor-pointer"
+                className={`bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] w-fit 
+                rounded-md px-3 py-2 hover:cursor-pointer`}
               >
                 Agendar Consulta
               </button>

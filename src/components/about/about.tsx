@@ -1,14 +1,25 @@
 import { Lightbulb, Target, Users } from "lucide-react"
 
+interface Principle {
+  id: string
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
+  number: string
+  title: string
+  description: string
+}
+
+
 export function About() {
-  const principles = [
+  const principles: Principle[] = [
     {
+      id: "strategy",
       icon: Target,
       number: "01",
       title: "Enfoque Estratégico",
       description: "Acompañamos a las empresas en su transición hacia nuevas prácticas durables y sostenibles.",
     },
     {
+      id: "relationship",
       icon: Users,
       number: "02",
       title: "Vínculo Cercano",
@@ -25,18 +36,18 @@ export function About() {
           <h2 className="text-sm font-semibold text-[#002443] uppercase tracking-wider mb-4">
             Nuestros Principios
           </h2>
-          <h3 className="text-3xl lg:text-4xl font-bold text-[#0f0a03] mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#0f0a03] mb-6">
             Nuestra Filosofía de Trabajo
-          </h3>
+          </h2>
         </div>
 
         {/* Principles Grid */}
         <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {principles.map((principle, index) => (
-            <div key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-[#ffffff] text-[#0f0a03] flex flex-col gap-6 rounded-xl py-6">
+          {principles.map((principle) => (
+            <div key={principle.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-[#ffffff] text-[#0f0a03] flex flex-col gap-6 rounded-xl py-6">
               <div className="p-8 px-6">
                 <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0">
+                  <div className="shrink-0">
                     <div className="w-16 h-16 bg-[#002443]/10 rounded-2xl flex items-center justify-center">
                       <principle.icon className="w-8 h-8 text-[#002443]" />
                     </div>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Valentino/Desktop/mio/proyectos/EstudioContable/frontend/src/styles/fonts.css"],"sourcesContent":["@font-face {\r\n  font-family: 'Geist';\r\n  src: url('../assets/fonts/Geist/Geist-VariableFont_wght.ttf') format('truetype');\r\n  font-weight: 100 900; \r\n  font-style: normal;\r\n  font-display: swap;\r\n}"],"names":[],"mappings":"AAAA"}},
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Valentino/Desktop/mio/proyectos/EstudioContable/frontend/src/styles/App.css"],"sourcesContent":["@import \"./fonts.css\";\n@import \"tailwindcss\";\n\n/* Inputs */\ninput:-webkit-autofill,\ninput:-webkit-autofill:hover,\ninput:-webkit-autofill:focus,\ntextarea:-webkit-autofill,\ntextarea:-webkit-autofill:hover,\ntextarea:-webkit-autofill:focus,s\nselect:-webkit-autofill,\nselect:-webkit-autofill:hover,\nselect:-webkit-autofill:focus {\n  -webkit-box-shadow: 0 0 0px 1000px #faf8f5 inset ; \n  -webkit-text-fill-color: #0f0a03 ;\n  transition: background-color 5000s ease-in-out 0s;\n}\n\n\nbody {\n  margin: 0;\n  padding: 0;\n  width: 100%;\n  font-family: 'Geist', sans-serif;\n  background-color:#faf8f5;\n  min-height: screen;\n  color: rgba(255, 255, 255, 0.76)\n}"],"names":[],"mappings":"AAIA;;;;;;AAAA;;;;;;AAAA;;;;;;AAAA;;;;;;AAAA;;;;;;AAAA;;;;;;AAAA;;;;;;AAAA;;;;;;AAAA;;;;;;AAeA"}}]
+}

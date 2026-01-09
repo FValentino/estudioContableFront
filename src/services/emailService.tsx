@@ -13,7 +13,7 @@ export const sendEmail = async (subject: string, message: string):Promise<Servic
       html: message
     }
 
-    const response = await axios.post("https://estudiocontableback.onrender.com/contact", data, {
+    const response = await axios.post("/api/contact", data, {
       headers: {
         "Content-Type": "application/json",
       }

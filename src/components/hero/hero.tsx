@@ -1,15 +1,13 @@
 "use client";
+
 import { motion, easeInOut, type Variants, type Transition } from "framer-motion";
-import heroImage from "../../assets/images/heroImage.jpg"
-import { useNavigate } from "react-router-dom";
 import { ArrowRight, TrendingUp } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
 
-  const navigate = useNavigate();
-
   const entranceTransition: Transition = {
-    type: "spring",      // ✅ TS ahora sabe que es un tipo válido
+    type: "spring",      
     stiffness: 200,
     damping: 12,
     delay: 1
@@ -44,7 +42,7 @@ export default function Hero() {
       viewport={{ once: true }}
     >
       {/* Fondo decorativo */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#faf8f5] via-[#ebe4d6]/20 to-[#e1d6c2]/30" />
+      <div className="absolute inset-0 bg-linear-to-br from-[#faf8f5] via-[#ebe4d6]/20 to-[#e1d6c2]/30" />
       <div className="absolute top-20 right-10 w-72 h-72 bg-[#002443]/5 rounded-full blur-3xl" />
       <div
         className="absolute bottom-20 left-10 w-96 h-96 bg-[#e1d6c2]/10 rounded-full blur-3xl"
@@ -84,17 +82,17 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button onClick={()=>{navigate("/contacto")}}
-                className="bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] 
-                group rounded-md px-5 py-3 font-medium flex items-center justify-center hover:cursor-pointer">
+              <a href="#contacto"
+                className={`bg-[linear-gradient(135deg,#002443_0%,#00464b_100%)] text-[#faf8f5] 
+                group rounded-md px-5 py-3 font-medium flex items-center justify-center hover:cursor-pointer`}>
                 Agendar tu Reunión
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button onClick={()=>{navigate("/servicios")}}
-                className="text-[#002443] border border-[#002443] px-5 py-3 rounded-md hover:bg-[#002443] 
-                hover:text-[#faf8f5] hover:cursor-pointer transition-colors">
+              </a>
+              <a href="#servicios"
+                className={`text-[#002443] border border-[#002443] px-5 py-3 rounded-md hover:bg-[#002443] 
+                hover:text-[#faf8f5] hover:cursor-pointer transition-colors`}>
                 Conocer Servicios
-              </button>
+              </a>
             </div>
           </motion.div>
 
@@ -105,14 +103,12 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <div className="relative w-full h-96 lg:h-[500px]">
+            <div className="relative w-full h-96 lg:h-125">
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl">
-                <img
-                  src={heroImage}
-                  alt="Servicios empresariales digitales y gestión de negocios moderna"
-                  className="object-cover w-full h-full"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#002443]/20 to-transparent" />
+                <Image src="/hero/heroImage.jpg" alt="Servicios empresariales digitales y gestión de negocios moderna"
+                  fill
+                  className="object-cover w-full h-full"/>
+                <div className="absolute inset-0 bg-linear-to-t from-[#002443]/20 to-transparent" />
               </div>
 
               {/* Tarjeta superior */}

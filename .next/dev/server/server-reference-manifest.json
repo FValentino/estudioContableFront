@@ -1,0 +1,36 @@
+{
+  "node": {
+    "406ea8faf3342fe4bcffe584e6798bfaf01c739a7d": {
+      "workers": {
+        "app/page": {
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/actions/newsEmail.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/actions/contactEmail.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "newsEmailAction",
+          "filename": "src/actions/newsEmail.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "filename": "src/actions/newsEmail.ts",
+      "exportedName": "newsEmailAction"
+    },
+    "4033a39c03a9525709bf2580411aede289cd4bc945": {
+      "workers": {
+        "app/page": {
+          "moduleId": "[project]/.next-internal/server/app/page/actions.js { ACTIONS_MODULE0 => \"[project]/src/actions/newsEmail.ts [app-rsc] (ecmascript)\", ACTIONS_MODULE1 => \"[project]/src/actions/contactEmail.ts [app-rsc] (ecmascript)\" } [app-rsc] (server actions loader, ecmascript)",
+          "async": false,
+          "exportedName": "contactEmailAction",
+          "filename": "src/actions/contactEmail.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "filename": "src/actions/contactEmail.ts",
+      "exportedName": "contactEmailAction"
+    }
+  },
+  "edge": {},
+  "encryptionKey": "PTrIwyAUq1z3qxAC6akDRKwsRNrZPg/ffOZrvLuXxZM="
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Valentino/Desktop/mio/proyectos/EstudioContable/frontend/src/client/reactQuery.ts"],"sourcesContent":["import { QueryClient } from \"@tanstack/react-query\";\r\n\r\nexport const queryClient = new QueryClient();"],"names":[],"mappings":";;;;AAAA;;AAEO,MAAM,cAAc,IAAI,4LAAW"}},
+    {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Valentino/Desktop/mio/proyectos/EstudioContable/frontend/src/app/providers.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport { QueryClientProvider } from '@tanstack/react-query';\r\nimport { queryClient } from '@/client/reactQuery';\r\nimport type { ReactNode } from \"react\";\r\n\r\nexport function Providers({ children }: { children: ReactNode }) {\r\n  return (\r\n    <QueryClientProvider client={queryClient}>\r\n      {children}\r\n    </QueryClientProvider>\r\n  );\r\n}"],"names":[],"mappings":";;;;;AAEA;AACA;AAHA;;;;AAMO,SAAS,UAAU,EAAE,QAAQ,EAA2B;IAC7D,qBACE,8OAAC,6MAAmB;QAAC,QAAQ,0IAAW;kBACrC;;;;;;AAGP"}}]
+}
